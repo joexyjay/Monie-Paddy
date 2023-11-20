@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "nodemon Backend/bin/www",
+    "start": "node Backend/bin/www",
+    "build": "yarn && yarn add --prefix Frontend && yarn run build --prefix Frontend"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  }
+}

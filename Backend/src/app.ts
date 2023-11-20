@@ -16,6 +16,7 @@ import passportSetup from "./config/passport";
 
 var bodyParser = require("body-parser");
 
+
 dotenv.config();
 connectDB();
 passportSetup();
@@ -46,7 +47,12 @@ app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "..", "public")));
+// app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, '/Frontend/dist')))
+
+app.get('*', (req,res) => {
+    res.sendFile(path.join(__dirname, 'Frontend', 'dist', 'index.html'))
+})
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
