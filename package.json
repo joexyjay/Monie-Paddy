@@ -4,6 +4,9 @@
     "start": "node Backend/bin/www",
     "build": "yarn && yarn add --prefix Frontend && yarn run build --prefix Frontend"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "axios": "^1.6.1",
     "bcryptjs": "^2.4.3",
